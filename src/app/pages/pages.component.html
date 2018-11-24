@@ -1,0 +1,90 @@
+<div class="sidenav-container" [class.sidenav-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="sidenav-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="sidenav-app-name">Responsive App</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened class="sidenav-list">
+      <mat-list>
+        <mat-list-item>
+          <a  mat-list-item routerLink="/pages/dashboard" class="sidenav-list-item">
+            <mat-icon>home</mat-icon> DashBoard
+          </a>
+        </mat-list-item>
+        <mat-list-item>
+          <a  mat-list-item class="sidenav-list-item" [matMenuTriggerFor]="UIComponents">
+            <fa-icon [icon]="['fab', 'uikit']"></fa-icon>
+            <span style="margin-left:5px;">
+              UI Components
+              <fa-icon [icon]="['fas', 'angle-down']"></fa-icon>
+            </span>
+          </a>
+          <mat-menu #UIComponents="matMenu">
+            <a mat-menu-item routerLink="/pages/cards" class="sidenav-list-item">
+              <fa-icon [icon]="['far', 'credit-card']"></fa-icon>
+              <span style="margin-left:5px;">Cards</span>
+            </a>
+            <a mat-menu-item routerLink="" class="sidenav-list-item">
+              <fa-icon [icon]="['fab', 'wpforms']"></fa-icon>
+              <span style="margin-left:5px;">Forms</span>
+            </a>
+            <!-- <a mat-menu-item routerLink="/pages/icons" class="sidenav-list-item">
+              <fa-icon [icon]="['far', 'image']"></fa-icon>
+              <span style="margin-left:5px;">Icons</span>
+            </a> -->
+            <a mat-menu-item routerLink="/pages/typography" class="sidenav-list-item">
+              <fa-icon [icon]="['fas', 'font']"></fa-icon>
+              <span style="margin-left:5px;">Typography</span>
+            </a>
+            <a mat-menu-item routerLink="/pages/helper-classes" class="sidenav-list-item">
+              <fa-icon [icon]="['fas', 'question-circle']"></fa-icon>
+              <span style="margin-left:5px;">Helper Classes</span>
+            </a>
+            <!-- <a mat-menu-item routerLink="/pages/colors" class="sidenav-list-item">
+              <fa-icon [icon]="['fas', 'palette']"></fa-icon>
+              <span style="margin-left:5px;">Colors</span>
+            </a> -->
+          </mat-menu>
+        </mat-list-item>
+        <mat-list-item>
+          <a  mat-list-item class="sidenav-list-item" [matMenuTriggerFor]="AuthComponents">
+            <fa-icon [icon]="['fas', 'lock']"></fa-icon>
+            <span style="margin-left:5px;">
+              Auth Components
+              <fa-icon [icon]="['fas', 'angle-down']"></fa-icon>
+            </span>
+          </a>
+          <mat-menu #AuthComponents="matMenu">
+            <a mat-menu-item routerLink="/Auth/login" class="sidenav-list-item">
+              <fa-icon [icon]="['fas', 'sign-in-alt']"></fa-icon>
+              <span style="margin-left:5px;">Login</span>
+            </a>
+            <a mat-menu-item routerLink="/Auth/signup" class="sidenav-list-item">
+              <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
+              <span style="margin-left:5px;">Sign Up</span>
+            </a>
+            <a mat-menu-item routerLink="/Auth/reset-password" class="sidenav-list-item">
+              <fa-icon [icon]="['fas', 'question-circle']"></fa-icon>
+              <span style="margin-left:5px;">Forgot Password</span>
+            </a>
+            <a mat-menu-item routerLink="/Auth/page-not-found" class="sidenav-list-item">
+              <fa-icon [icon]="['fas', 'times']"></fa-icon>
+              <span style="margin-left:5px;">Error</span>
+            </a>
+          </mat-menu>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+

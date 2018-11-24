@@ -1,0 +1,22 @@
+fieldset
+{
+    border: 1px solid  !important;
+    margin: 0;
+    min-width: 0;
+    padding: 10px;
+    position: relative;
+    border-radius:4px;
+    padding-left:10px!important;
+}
+
+legend
+{
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom: 0px;
+    border: 0px solid ;
+    border-radius: 4px;
+    padding: 5px 5px 5px 10px;
+    width:15%;
+    text-align: center;
+}

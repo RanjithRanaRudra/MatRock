@@ -1,0 +1,63 @@
+
+.sidenav-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidenav-is-mobile .sidenav-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.sidenav-app-name {
+  margin-left: 8px;
+}
+
+.sidenav-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.sidenav-is-mobile .sidenav-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.sidenav-list {
+  padding: 5px;
+  background-color: rgba(245, 245, 245, 0.938);
+}
+
+a.sidenav-list-item {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+a.sidenav-list-item:hover {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  background-color: lightgrey;
+}
+mat-list-item:hover {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+.container-fluid {
+  margin-top: 25px;
+  margin-right: 10px;
+  box-shadow: lightgrey;
+}
