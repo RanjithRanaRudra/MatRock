@@ -1,3 +1,35 @@
-<p>
-  sign-up works!
-</p>
+<div class="home">
+  <div class="container">
+    <form #signUpForm="ngForm">
+      <div class="row" [formGroup]="signUpForm">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 glass" >
+          <mat-card>
+            <mat-card-header>
+                <mat-card-title>SIGNUP</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-form-field>
+                <input matInput placeholder="UserName" [formControl]="userName" autofocus>
+                <br>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput placeholder="Password" formControlName="password" [errorStateMatcher]="matcher">
+              </mat-form-field>
+              <br>
+                <a style="font-size: 12px;float:right;color:indigo;cursor:pointer;">
+                  <fa-icon [icon]="['fas', 'question-circle']"></fa-icon> Forgot Password
+                </a>
+              <br><br>
+              <button mat-raised-button color="primary" style="width:100%;">SIGNUP</button>
+              <br><br>
+              <a style="font-size: 12px;float:right;color:indigo;cursor:pointer;"><span>Not a member ?</span> <strong>Sign Up</strong>  </a>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+

@@ -1,3 +1,4 @@
+import { PagesCoreDependencyService } from './../shared/imports/pages-error-dependency.service';
 import { HelperClassesComponent } from './helper-classes/helper-classes.component';
 import { ColorsComponent } from './colors/colors.component';
 import { TypographyComponent } from './typography/typography.component';
@@ -35,7 +36,8 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonImportModule
+    CommonImportModule,
+    PagesCoreDependencyService
   ],
   exports: [RouterModule]
 })

@@ -109,7 +109,7 @@ library.add(faCreditCard, faImage);
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
   exports: [
     CdkTableModule,
